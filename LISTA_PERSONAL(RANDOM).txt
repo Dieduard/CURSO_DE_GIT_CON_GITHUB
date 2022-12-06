@@ -9,7 +9,7 @@
 9.	Hno Hugo
 10.	Salva # 1
 11.	Salva # 2
-12. 	Norma
+12. Norma
 13.	Melissa
 14.	Nelda
 15.	Ingrid
@@ -20,6 +20,7 @@
 20.	Lorena
 21.	Stefanny
 22.	Janeth
-23.     Elii
+23. Elii
 24.	Mirna
-25.     Beatriz
+25. Beatriz
+26. Majo
