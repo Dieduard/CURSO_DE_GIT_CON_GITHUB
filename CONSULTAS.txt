@@ -1,0 +1,125 @@
+select * from movcheques where fecha = "2024-06-17" and agencia = 03  00549006401
+select * from movremes where fecha = "2024-06-17" and agencia = 03
+
+
+
+select * from movcheques where fecha = "2024-06-17" and agencia = 03
+select * from movremes where fecha = "2024-06-17" and agencia = 03
+select * from movpres where codigopre = 00407000502
+select * from salaho where codigoaho = 01281031713
+select * from gldetbancoopre where fecha = "2024-06-17" and numcaja = 02 and comprobant = 77037
+select * from movaho where codigoaho = 04453036301 and fecha = "2024-01-01"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select * from movaho where codigoaho = 04479036401 and fecha = "2024-01-01"
+select * from colecta where agencia = 01 and asesor = 06
+
+select * from salpres where colector = 06 and fech_ult between "2024-04-01" and "2024-04-30" order by fech_ult asc
+select * from movpres where cobrador = 06 and fecha >= "2024-04-01" order by fecha asc
+
+
+
+select mo.codigopre as codigo, mo.fecha as fecha, mo.COMPROBANT as comprobante,
+mo.valor as valor, mo.INT_APLIC as interesaplicado, mo.P110401 as abonocapital, 
+mo.MANEJO as planayc, mo.COBRANZA as recargo from salpres sa 
+inner join movpres mo on sa.codigopre = mo.codigopre
+WHERE sa.COLECTOR = 06 AND mo.FECHA >= '2024-04-01'  and mo.tipo = 2 and  mo.COMPROBANT = 0
+
+SELECT ma.NOMBRE,ma.APELLIDO,ma.DIRECCION,sa.CODIGOPRE,sa.FECHA,sa.COMPROBANT,sa.VALOR,sa.SALDO,sa.DIAS,sa.INT_APLIC,sa.INT_PEND,sa.INT_MES,sa.INT_ACUM,sa.INT_MORA,sa.T_INT,sa.MANEJO,sa.COBRANZA
+FROM maeasoc ma
+INNER JOIN movpres sa ON ma.CODIGO= SUBSTRING(sa.CODIGOPRE,1,7)
+WHERE sa.cobrador = 06 and COMPROBANT = 0 AND
+ fecha between "2024-04-01" and "2024-04-30" order by fecha asc
+
+
+
+
+
+
+
+
+
+  DatosPersona = new string[9];
+            DatosPersona[0] = txtCarnet.Text;
+            DatosPersona[1] = txtNombre.Text;
+            DatosPersona[2] = txtApellido.Text;
+            DatosPersona[3] = txtSueldo.Text;
+            //DatosPersona[4] = txtNombre.Text;
+            //DatosPersona[5] = txtNombre.Text;
+            //DatosPersona[6] = txtNombre.Text;
+            //DatosPersona[7] = txtNombre.Text;
+            //DatosPersona[8] = txtNombre.Text;
+            //DatosPersona[9] = txtNombre.Text;
+
+            /* AQUI ESTAMOS DECLARANDO LAS VARIABLES A USAR DE LA PERSONA */
+            int Carnet = int.Parse(txtCarnet.Text);
+            string Nombre = txtNombre.Text;
+            string Apellido = txtApellido.Text;
+            double Sueldo = double.Parse(txtSueldo.Text);
+
+            DatosPersona = new string[ Nombre, Apellido];
+
+            DatosPersona = { txtCarnet.Text, Nombre, Apellido, Sueldo.ToString()};
+            for (int i = 0; i < DatosPersona.Length; )
+            {
+                i++;
+            }
+
+
+
+
+
+
+
+
+
+
+//if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //    //MessageBox.Show("Solo se permite Nùmeros", "Validaciòn Texbox", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
+            if ((e.KeyChar>=32 && e.KeyChar <=47)||(e.KeyChar>=58 &&  e.KeyChar<= 255))
+            {
+                MessageBox.Show("Solo Aceptan Numeros", "Alerta",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
+
+
+
+//if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //    //MessageBox.Show("Solo se permite Letras", "Validaciòn Texbox", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) ||(e.KeyChar>=125 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solo Aceptan Letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+
