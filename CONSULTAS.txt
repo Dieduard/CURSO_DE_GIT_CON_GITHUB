@@ -76,4 +76,4 @@ WHERE sa.cobrador = 06 and COMPROBANT = 0 AND
                 return;
             }
 
-Cambios aplicados....
+Cambios aplicados....2
